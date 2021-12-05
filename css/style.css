@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    background-color: rgb(247, 239, 239);
+}
+
+header{
+    background-color: rgb(39, 135, 190);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main{
+    padding: 30px 50px;
+}
+
+.card{
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius:  5px;
+}
+
+.card span{
+    margin-left: 50%;
+}
+
+.lineInput{
+    display: grid;
+    margin-bottom: 10px;
+}
+
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: 0;
+}
+
+button{
+    border: 0px;
+    outline: 0;
+    padding: 10px;
+    background-color: rgb(39, 135, 190);
+    color: #fff;
+    border-radius: 3px;
+    transition: all ease 0.3s;
+}
+
+button:hover{
+    background-color: rgb(34, 115, 161);
+}
+
+
+
+.content{
+    margin-top: 15px;
+
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+table th{
+    background-color: rgb(218, 218, 218);
+}
+
+table th, td{
+    text-align: left;
+    padding: 1px 5px;
+}
+
+table td img{
+    width: 25px;
+    margin-left: 22%;
+}
+
+.center{
+    text-align: center;
+}
+
+@media screen and (max-width: 740px){
+    .card span{
+        margin-left: 30%;
+    }
+
+    table td img{
+        width: 25px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 540px){
+    .card span{
+        display: block;
+        margin-left: 3px;
+        margin-top: 10px;
+    }
+
+    table td img{
+        width: 25px;
+        padding: 2px;
+    }
+}
