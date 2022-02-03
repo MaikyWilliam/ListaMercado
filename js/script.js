@@ -58,6 +58,7 @@ class Produto{
         
         produto.preco = parseFloat(produto.preco);
         produto.preco = produto.preco.toFixed(2);
+        produto.quantidade = produto.quantidade;
         
         this.arrayProdutos.push(produto);
         this.id++;
@@ -70,8 +71,10 @@ class Produto{
                 this.arrayProdutos[i].nomeProduto = produto.nomeProduto;
                 let valAnterior = this.arrayProdutos[i].preco;
                 this.arrayProdutos[i].preco = produto.preco;
-                console.log(this.arrayProdutos[i].quantidade)
-                this.calcular(2, this.arrayProdutos[i].preco, this.arrayProdutos[i].quantidade, valAnterior)
+
+                let quantidade = this.arrayProdutos[i].quantidade;
+                this.arrayProdutos[i].quantidade = produto.quantidade;
+                this.calcular(2, this.arrayProdutos[i].preco, this.arrayProdutos[i].quantidade, quantidade, valAnterior)
 
             }
         }
@@ -121,7 +124,7 @@ class Produto{
         }
     }
 
-    calcular(idx, dados, quantidade, valAnterior = 0){
+    calcular(idx, dados, quantidade, qtdAnterior = 1, valAnterior = 0){
         //idx 1 = adicionar - idx 2 = atualizar - idx 3 = deletar 
         let total = 0;
 
@@ -129,15 +132,12 @@ class Produto{
             total = parseFloat(dados.preco) * dados.quantidade;
             this.somaTotal += total;
         }else if(idx == 2){
-            this.somaTotal -= parseFloat(valAnterior) * quantidade;
-            console.log(this.somaTotal)
-            console.log(dados)
-            console.log(quantidade)
+            this.somaTotal -= parseFloat(valAnterior) * qtdAnterior;
             total = parseFloat(dados) * quantidade;
-            this.somaTotal += parseFloat(dados);
+            this.somaTotal += total;
 
         }else if(idx == 3){
-            this.somaTotal -= parseFloat(dados);
+            this.somaTotal -= parseFloat(dados) * quantidade;
         }
 
         document.getElementById('total').innerText = 'Total: R$'+this.somaTotal;
@@ -161,7 +161,7 @@ class Produto{
             let tbody = document.getElementById('tbody');
             for(let i = 0; i < this.arrayProdutos.length; i++){
                 if(this.arrayProdutos[i].id == id){
-                    this.calcular(3, this.arrayProdutos[i].preco, this.arrayProdutos[i].qtd)
+                    this.calcular(3, this.arrayProdutos[i].preco, this.arrayProdutos[i].quantidade)
                     this.arrayProdutos.splice(i, 1);
                     tbody.deleteRow(i);
                 }
