@@ -38,6 +38,15 @@ main{
     margin-bottom: 10px;
 }
 
+#qtd{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 60px;
+    border-radius: 3px;
+    outline: 0;
+    margin-bottom: 10px;
+}
+
 input{
     padding: 10px;
     border: 1px solid #ccc;

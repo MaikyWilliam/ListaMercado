@@ -13,7 +13,7 @@
 <body>
 
     <header>
-        <h1>Minha Loja 1.0</h1>
+        <h1>Compras de Mercado</h1>
     </header>
 
 
@@ -21,7 +21,7 @@
 
         <div class="title">
             <h2>Produtos</h2>
-            <span>Lista de produtos da minha Loja</span>
+            <span>Lista de produtos colocados no carrinho</span>
         </div>
 
         <div class="card">
@@ -34,6 +34,11 @@
             <div class="lineInput">
                 <label>Preço</label>
                 <input type="number" id="preco" placeholder="Valor do produto">
+            </div>
+
+            <div class="qtd">
+                <label>Quantidade</label>
+                <input type="number" id="qtd" value="1">
             </div>
 
             <button onclick="produto.salvar()" id="btn1">Salvar</button>
@@ -49,6 +54,7 @@
                 <thead>
                     <th class="center">ID</th>
                     <th>Produto</th>
+                    <th>Quantidade</th>
                     <th>Valor</th>
                     <th class="center">Acões</th>
                 </thead>
